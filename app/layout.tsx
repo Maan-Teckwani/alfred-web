@@ -1,24 +1,32 @@
 import type { Metadata } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import { Newsreader, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
+const serif = Newsreader({
   subsets: ["latin"],
-  variable: "--font-sans",
+  weight: ["200", "300", "400", "500"],
+  style: ["normal", "italic"],
+  variable: "--font-serif",
   display: "swap",
 });
 
-const mono = JetBrains_Mono({
+const mono = IBM_Plex_Mono({
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
+  weight: ["300", "400", "500"],
   variable: "--font-mono",
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Alfred — Tickets in. Tested PRs out.",
+  title: "Alfred — The codebase has a butler.",
   description:
-    "Alfred watches your Jira board, fixes bugs in an isolated sandbox, proves every patch against your test suite, and opens the pull request — with a Slack ping to your team.",
+    "Bug tickets go in. Review-ready pull requests come out. Alfred triages, reproduces, fixes, and tests routine engineering work autonomously — your engineers never leave flow.",
+  openGraph: {
+    title: "Alfred — The codebase has a butler.",
+    description:
+      "Bug tickets go in. Review-ready pull requests come out. Autonomous software maintenance for teams that guard their focus.",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
@@ -27,7 +35,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${mono.variable}`}>
+    <html lang="en" className={`${serif.variable} ${mono.variable}`}>
       <body>{children}</body>
     </html>
   );

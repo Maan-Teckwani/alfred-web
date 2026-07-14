@@ -1,29 +1,28 @@
 import Nav from "@/components/Nav";
+import SmoothScroll from "@/components/SmoothScroll";
 import Hero from "@/components/Hero";
-import Stack from "@/components/Stack";
-import Workflow from "@/components/Workflow";
-import Features from "@/components/Features";
-import Verification from "@/components/Verification";
-import Escalation from "@/components/Escalation";
-import Pricing from "@/components/Pricing";
-import FinalCta from "@/components/FinalCta";
+import Manifesto from "@/components/Manifesto";
+import Method from "@/components/Method";
+import Showcase from "@/components/Showcase";
+import Trust from "@/components/Trust";
+import Closing from "@/components/Closing";
 import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
     <>
       <Nav />
-      <main id="top">
-        <Hero />
-        <Stack />
-        <Workflow />
-        <Features />
-        <Verification />
-        <Escalation />
-        <Pricing />
-        <FinalCta />
-      </main>
-      <Footer />
+      <SmoothScroll>
+        <main>
+          <Hero />
+          <Manifesto />
+          <Method />
+          <Showcase />
+          <Trust />
+          <Closing />
+        </main>
+        <Footer />
+      </SmoothScroll>
     </>
   );
 }
