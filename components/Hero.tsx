@@ -230,28 +230,29 @@ export default function Hero() {
       {/* copy */}
       <div className="hero-copy">
         <div className="hero-copy-inner">
-          <div className="eyebrow hero-eyebrow">Autonomous Software Maintenance</div>
+          <div className="eyebrow hero-eyebrow">Autonomous bug fixing</div>
           <h1 className="hero-h1">
-            The codebase
+            Keep shipping.
             <br />
-            has a butler.
+            Alfred fixes the bugs.
           </h1>
           <p className="hero-sub">
-            Bug tickets go in. Review-ready pull requests come out. Your
-            engineers never leave flow.
+            Alfred is an AI engineer that clears your bug backlog. It takes a
+            ticket from Jira, writes and tests the fix, and opens a pull request
+            your team just reviews and merges.
           </p>
           <div className="hero-ctas">
             <a href="#demo" className="btn-solid">
-              Book a Demo
+              Book a demo
             </a>
             <a href="#method" className="btn-ghost">
-              See Alfred work <span className="arrow">&#8594;</span>
+              See Alfred fix a bug <span className="arrow">&#8594;</span>
             </a>
           </div>
         </div>
       </div>
 
-      <div className="hero-marker">Ticket &#8594; Pull Request</div>
+      <div className="hero-marker">Jira ticket &#8594; tested pull request</div>
     </section>
   );
 }

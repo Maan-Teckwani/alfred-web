@@ -36,13 +36,15 @@ export default function Footer() {
               <span className="brand-gem" aria-hidden="true"></span>
               <span className="footer-brand-word">ALFRED</span>
             </div>
-            <p className="footer-tagline">Quietly keeping software moving.</p>
+            <p className="footer-tagline">
+              The AI engineer for your bug backlog.
+            </p>
           </div>
           <div>
             <div className="footer-col-title">Product</div>
             <div className="footer-links">
               <a href="#method" className="footer-link">
-                Method
+                How it works
               </a>
               <a href="#showcase" className="footer-link">
                 Product
@@ -75,7 +77,7 @@ export default function Footer() {
         </div>
         <div className="footer-bottom">
           <span>&#169; 2026 Alfred</span>
-          <span className="tag">Software maintenance, automated.</span>
+          <span className="tag">Bug fixing, automated.</span>
         </div>
       </div>
     </footer>

@@ -113,8 +113,8 @@ export default function DemoForm() {
           <div className="demo-success-ring">&#10003;</div>
           <div className="demo-success-title">Consider it handled.</div>
           <p className="demo-success-sub">
-            Your request is in. We&rsquo;ll reach out shortly to schedule a
-            demo on your own backlog.
+            Your request is in. We&rsquo;ll email you shortly to set up a demo
+            on your own codebase.
           </p>
         </div>
       ) : (
@@ -147,12 +147,12 @@ export default function DemoForm() {
               type="submit"
               disabled={status === "sending"}
             >
-              {status === "sending" ? "Sending…" : "Request a Demo"}
+              {status === "sending" ? "Sending…" : "Book my demo"}
             </button>
           </form>
           {status === "error" && <div className="demo-error">{errorMsg}</div>}
           <div className="demo-note">
-            NO SPAM &#183; ONE EMAIL TO SCHEDULE YOUR DEMO
+            NO SPAM &#183; JUST ONE EMAIL TO FIND A TIME
           </div>
         </>
       )}

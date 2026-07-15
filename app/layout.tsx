@@ -18,13 +18,13 @@ const mono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Alfred — The codebase has a butler.",
+  title: "Alfred — An AI engineer for your bug backlog",
   description:
-    "Bug tickets go in. Review-ready pull requests come out. Alfred triages, reproduces, fixes, and tests routine engineering work autonomously — your engineers never leave flow.",
+    "Alfred picks up bug tickets from Jira, reproduces them, writes and tests the fix, and opens a pull request your team reviews and merges. Your engineers stay on the roadmap.",
   openGraph: {
-    title: "Alfred — The codebase has a butler.",
+    title: "Alfred — An AI engineer for your bug backlog",
     description:
-      "Bug tickets go in. Review-ready pull requests come out. Autonomous software maintenance for teams that guard their focus.",
+      "Alfred fixes your bug tickets end to end and opens a tested pull request. You review, you merge. Your engineers keep shipping.",
     type: "website",
   },
 };

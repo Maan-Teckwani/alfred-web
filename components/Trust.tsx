@@ -31,7 +31,9 @@ export default function Trust() {
   return (
     <section id="trust" className="trust section-alt" ref={section}>
       <div className="container">
-        <h2 className="trust-h2">Trusted by teams that guard their focus.</h2>
+        <h2 className="trust-h2">
+          Built for teams that would rather be shipping.
+        </h2>
         <div className="trust-logos">
           <span className="trust-logo logo-serif">Meridian</span>
           <span className="trust-logo logo-caps">NORTHWELL</span>

@@ -46,7 +46,7 @@ export default function Nav() {
       </a>
       <div className="nav-right">
         <a href="#method" className="nav-link">
-          Method
+          How it works
         </a>
         <a href="#showcase" className="nav-link">
           Product

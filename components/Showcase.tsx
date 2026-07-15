@@ -117,18 +117,19 @@ export default function Showcase() {
     <section id="showcase" className="showcase" ref={section}>
       <div className="container">
         <div className="section-head showcase-head">
-          <div className="eyebrow">The Instrument</div>
-          <h2 className="section-h2">Built to be looked at once a day.</h2>
+          <div className="eyebrow">See it work</div>
+          <h2 className="section-h2">You stay in control of every fix.</h2>
         </div>
 
         {/* ---------- operations dashboard ---------- */}
         <div className="show-row text-left">
           <div className="show-text">
-            <div className="show-label">Operations</div>
-            <h3 className="show-h3">The whole queue, at one glance.</h3>
+            <div className="show-label">Dashboard</div>
+            <h3 className="show-h3">Watch your backlog clear itself.</h3>
             <p className="show-p">
-              What&rsquo;s in flight, what shipped, what&rsquo;s waiting on a
-              human. No dashboards to babysit. No status meetings to hold.
+              Every bug ticket and exactly where Alfred has it: reproducing,
+              fixing, in review, or merged. One place to glance at, nothing new
+              to babysit.
             </p>
           </div>
           <div className="show-window window dash-window" data-lag="0.14">
@@ -218,10 +219,11 @@ export default function Showcase() {
           </div>
           <div className="show-text">
             <div className="show-label">Pull Request</div>
-            <h3 className="show-h3">Every change arrives explained.</h3>
+            <h3 className="show-h3">Read the fix. Approve in a minute.</h3>
             <p className="show-p">
-              Reasoning, scope, diff, and the tests it passed — enough context
-              to approve in under a minute, not under an hour.
+              Every PR spells out the root cause, the diff, and the tests it
+              passed — enough to review with confidence. Nothing merges to your
+              codebase until you approve it.
             </p>
           </div>
         </div>
@@ -229,11 +231,12 @@ export default function Showcase() {
         {/* ---------- slack notification ---------- */}
         <div className="show-row text-left">
           <div className="show-text">
-            <div className="show-label">Notification</div>
-            <h3 className="show-h3">A quiet word, only when it matters.</h3>
+            <div className="show-label">Notifications</div>
+            <h3 className="show-h3">Get pinged only when a fix is ready.</h3>
             <p className="show-p">
-              Alfred doesn&rsquo;t ping. It doesn&rsquo;t nag. It speaks once —
-              when there is something worth a human&rsquo;s attention.
+              No status meetings, no chasing updates. Alfred messages your team
+              once per bug — when there&rsquo;s a pull request waiting to be
+              reviewed.
             </p>
           </div>
           <div className="show-window window slack-window" data-lag="0.14">

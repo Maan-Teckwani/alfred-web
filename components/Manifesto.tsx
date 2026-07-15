@@ -83,15 +83,15 @@ export default function Manifesto() {
       <div className="container">
         <div className="manifesto-grid">
           <h2 className="manifesto-h2">
-            Engineers build the future.
+            Your best engineers
             <br />
-            <span className="dim">Alfred maintains the present.</span>
+            <span className="dim">are stuck fixing bugs.</span>
           </h2>
           <p className="manifesto-p">
-            A bug ticket lands. It is triaged, reproduced, fixed, and proven
-            against your test suite — then returned as a pull request with its
-            reasoning attached. All that&rsquo;s left for your team is the
-            decision to merge.
+            Every bug ticket pulls a senior engineer out of deep work — an hour
+            to context-switch in, another to climb back out. Multiply that
+            across a sprint and the roadmap quietly slips, while the backlog
+            only grows. Alfred takes that work off their plate entirely.
           </p>
         </div>
         <div className="stats-grid">
@@ -100,19 +100,20 @@ export default function Manifesto() {
               14m
             </div>
             <div className="stat-label">
-              Median time from ticket landing to review-ready pull request.
+              Median time Alfred takes to turn a bug ticket into a review-ready
+              pull request.
             </div>
           </div>
           <div className="stat-cell">
             <div className="stat-num">Zero</div>
             <div className="stat-label">
-              Context switches asked of your engineers along the way.
+              Engineers pulled off the roadmap to chase it down.
             </div>
           </div>
           <div className="stat-cell">
             <div className="stat-num">One</div>
             <div className="stat-label">
-              Decision left to a human: approve, and merge.
+              Thing left for your team: review the pull request, then merge.
             </div>
           </div>
         </div>

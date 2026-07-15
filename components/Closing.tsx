@@ -57,10 +57,10 @@ export default function Closing() {
     <section id="demo" className="closing" ref={section}>
       <div className="closing-glow" aria-hidden="true"></div>
       <div className="closing-inner">
-        <h2 className="closing-h2">Protect the flow state.</h2>
+        <h2 className="closing-h2">See Alfred clear your backlog.</h2>
         <p className="closing-p">
-          Leave your email. We&rsquo;ll show you what your backlog looks like
-          when it starts clearing itself.
+          Leave your email and we&rsquo;ll book a short demo — watch Alfred fix
+          a real bug from your own codebase, end to end.
         </p>
         <div className="closing-form">
           <DemoForm />
