@@ -5,7 +5,7 @@ import type { CSSProperties } from "react";
 
 // Alfred Loop v3 — a continuous, self-driven timeline (no scroll triggers).
 // A ticket travels Jira → Alfred → Sandbox → GitHub → Slack and loops.
-const SPEED = 0.9;
+const SPEED = 1.1;
 const SHOW_CAPTIONS = true;
 const LOOP = 26; // seconds
 const MONO = "var(--mono)";
