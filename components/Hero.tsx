@@ -29,7 +29,7 @@ export default function Hero() {
         .from(".h-node-dot", { autoAlpha: 0, duration: 0.7, stagger: 0.06 }, 1.05)
         .from(".hero-eyebrow", { autoAlpha: 0, y: 18, duration: 1 }, 0.35)
         .from(".hero-sub", { autoAlpha: 0, y: 22, duration: 1.1 }, 1.05)
-        .from(".hero-ctas > *", { autoAlpha: 0, y: 18, duration: 0.9, stagger: 0.1 }, 1.25)
+        .from(".hero-ctas > *", { autoAlpha: 0, y: 18, duration: 0.9, stagger: 0.1, clearProps: "transform" }, 1.25)
         .from(".hero-marker", { autoAlpha: 0, duration: 1.4 }, 1.9);
 
       /* ---------- headline: masked line reveal ---------- */
