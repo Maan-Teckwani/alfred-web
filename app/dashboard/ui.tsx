@@ -8,6 +8,9 @@ import { ApiError } from "@/lib/alfred-api";
  */
 export function problemMessage(error: unknown): string {
   if (error instanceof ApiError) {
+    if (error.status === 402) {
+      return "Your organization doesn't have Alfred access yet. Signing up doesn't activate an account — we'll reach out once yours is approved.";
+    }
     if (error.status === 403) {
       return "Your session has no active organization. Pick or create one using the switcher above, then reload.";
     }
