@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ApiError, getRun } from "@/lib/alfred-api";
-import { StatusPill, duration, formatTime } from "../../ui";
+import { StatusPill, duration, formatTime, problemMessage } from "../../ui";
 
 export const metadata = { title: "Run detail — Alfred" };
 
@@ -18,7 +18,7 @@ export default async function RunDetailPage({ params }: { params: Promise<{ id: 
     return (
       <>
         <h1 className="dash-h1">Run</h1>
-        <div className="notice">Could not reach the Alfred API.</div>
+        <div className="notice">{problemMessage(error)}</div>
       </>
     );
   }

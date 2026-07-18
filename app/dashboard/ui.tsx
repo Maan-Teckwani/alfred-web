@@ -1,4 +1,23 @@
 /** Small presentational helpers shared across dashboard pages. */
+import { ApiError } from "@/lib/alfred-api";
+
+/**
+ * Turn a failure into an honest explanation. A 403 means the session carries no
+ * organization — saying "could not reach the API" there sends you debugging the
+ * wrong thing entirely.
+ */
+export function problemMessage(error: unknown): string {
+  if (error instanceof ApiError) {
+    if (error.status === 403) {
+      return "Your session has no active organization. Pick or create one using the switcher above, then reload.";
+    }
+    if (error.status === 401) {
+      return "Your session was rejected. Try signing out and back in.";
+    }
+    return `The Alfred API returned ${error.status}.`;
+  }
+  return "Could not reach the Alfred API. Start the control plane with: python main.py";
+}
 
 export function StatusPill({ status }: { status: string }) {
   return <span className={`pill pill-${status}`}>{status}</span>;

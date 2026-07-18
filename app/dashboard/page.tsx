@@ -1,30 +1,26 @@
 import Link from "next/link";
 import { getOverview, listRuns, type Overview, type RunSummary } from "@/lib/alfred-api";
-import { Empty, StatusPill, formatTime } from "./ui";
+import { Empty, StatusPill, formatTime, problemMessage } from "./ui";
 
 export const metadata = { title: "Overview — Alfred" };
 
 export default async function OverviewPage() {
   let overview: Overview | null = null;
   let runs: RunSummary[] = [];
-  let unreachable = false;
+  let problem: string | null = null;
 
   try {
     [overview, runs] = await Promise.all([getOverview(), listRuns()]);
-  } catch {
-    unreachable = true;
+  } catch (error) {
+    problem = problemMessage(error);
   }
 
-  if (unreachable || !overview) {
+  if (problem || !overview) {
     return (
       <>
         <h1 className="dash-h1">Overview</h1>
         <p className="dash-sub">Is Alfred earning its keep?</p>
-        <div className="notice">
-          Could not reach the Alfred API. Start the control plane
-          (<span className="mono">python main.py</span>) and make sure your account has an
-          active organization selected.
-        </div>
+        <div className="notice">{problem ?? "No data available."}</div>
       </>
     );
   }

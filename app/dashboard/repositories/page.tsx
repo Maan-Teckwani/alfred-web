@@ -1,16 +1,16 @@
 import { listRepositories, type Repository } from "@/lib/alfred-api";
-import { Empty } from "../ui";
+import { Empty, problemMessage } from "../ui";
 
 export const metadata = { title: "Repositories — Alfred" };
 
 export default async function RepositoriesPage() {
   let repos: Repository[] = [];
-  let unreachable = false;
+  let problem: string | null = null;
 
   try {
     repos = await listRepositories();
-  } catch {
-    unreachable = true;
+  } catch (error) {
+    problem = problemMessage(error);
   }
 
   return (
@@ -18,8 +18,8 @@ export default async function RepositoriesPage() {
       <h1 className="dash-h1">Repositories</h1>
       <p className="dash-sub">The repositories Alfred is allowed to touch.</p>
 
-      {unreachable ? (
-        <div className="notice">Could not reach the Alfred API.</div>
+      {problem ? (
+        <div className="notice">{problem}</div>
       ) : repos.length === 0 ? (
         <Empty>
           No repositories connected yet. One-click GitHub App install arrives with the

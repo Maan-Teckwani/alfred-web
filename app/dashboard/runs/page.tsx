@@ -1,17 +1,17 @@
 import Link from "next/link";
 import { listRuns, type RunSummary } from "@/lib/alfred-api";
-import { Empty, StatusPill, duration, formatTime } from "../ui";
+import { Empty, StatusPill, duration, formatTime, problemMessage } from "../ui";
 
 export const metadata = { title: "Runs — Alfred" };
 
 export default async function RunsPage() {
   let runs: RunSummary[] = [];
-  let unreachable = false;
+  let problem: string | null = null;
 
   try {
     runs = await listRuns();
-  } catch {
-    unreachable = true;
+  } catch (error) {
+    problem = problemMessage(error);
   }
 
   return (
@@ -19,8 +19,8 @@ export default async function RunsPage() {
       <h1 className="dash-h1">Runs</h1>
       <p className="dash-sub">Every ticket Alfred has picked up, and what came of it.</p>
 
-      {unreachable ? (
-        <div className="notice">Could not reach the Alfred API.</div>
+      {problem ? (
+        <div className="notice">{problem}</div>
       ) : runs.length === 0 ? (
         <Empty>No runs yet.</Empty>
       ) : (

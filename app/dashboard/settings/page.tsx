@@ -1,5 +1,6 @@
 import { revalidatePath } from "next/cache";
 import { getSettings, putSettings } from "@/lib/alfred-api";
+import { problemMessage } from "../ui";
 
 export const metadata = { title: "Settings — Alfred" };
 
@@ -17,12 +18,12 @@ async function saveInstructions(formData: FormData) {
 
 export default async function SettingsPage() {
   let settings: Record<string, unknown> = {};
-  let unreachable = false;
+  let problem: string | null = null;
 
   try {
     settings = await getSettings();
-  } catch {
-    unreachable = true;
+  } catch (error) {
+    problem = problemMessage(error);
   }
 
   const instructions =
@@ -33,8 +34,8 @@ export default async function SettingsPage() {
       <h1 className="dash-h1">Settings</h1>
       <p className="dash-sub">How Alfred behaves on your codebase.</p>
 
-      {unreachable ? (
-        <div className="notice">Could not reach the Alfred API.</div>
+      {problem ? (
+        <div className="notice">{problem}</div>
       ) : (
         <>
           <h2 className="dash-h2">Custom instructions</h2>
